@@ -51,8 +51,9 @@ def constant_vel_loop():
     while not rospy.is_shutdown() :
         wcv = WheelCmdVel()
         ##
-        wcv.desiredWV_R = 0.1
-        wcv.desiredWV_L = 0.2
+        # we are gonna go crazy fast
+        wcv.desiredWV_R = 15000
+        wcv.desiredWV_L = 2000
         velcmd_pub.publish(wcv) 
         
         rate.sleep() 
